@@ -30,17 +30,7 @@ export default function Home(){
   const newGame=()=>{previousResponseId.current=undefined;setGameStarted(false);setMode("game");quick("게임 할래",true)};
   const endGame=()=>{quick("게임 그만할래. 끝말잇기 게임을 종료해줘.",true);setGameStarted(false)};
   const statusText={idle:mode==="game"?"끝말잇기 단어를 말씀해주세요":"음성으로 건강 상태를 말씀해주세요",recording:"듣고 있습니다… 다시 누르면 종료됩니다",processing:"AI와 MCP가 처리하고 있습니다…",speaking:"AI가 답변을 읽어주는 중입니다…",error:"오류가 발생했습니다"}[status];
-  // return <main className="page"><section className="shell"><header className="header"><div className="brand"><span className="brand-mark">SOS</span><span>119</span></div><div className="model-pill">GPT-4o · STT · TTS · MCP</div></header>
-  //   <section className="hero"><div className="eyebrow">{mode==="game"?"COGNITIVE GAME ASSISTANT":"VOICE HEALTH ASSISTANT"}</div><h1>{mode==="game"?<>말로 즐기는<br/><span>두뇌 끝말잇기.</span></>:<>말로 묻고,<br/><span>안심하고 관리하세요.</>}</h1><p>{mode==="game"?"“게임 할래”라고 말하면 카카오 끝말잇기 MCP가 실행됩니다.":"STT → GPT-4o → TTS + MCP로 연결되는 음성 건강관리 AI 비서입니다."}</p>
-  //     <div className={`orb ${status}`}><div className="orb-core"><span>{status==="recording"?"●":status==="processing"?"…":mode==="game"?"가":"⌁"}</span></div></div><p className="status">{statusText}</p>
-  //     <button className={`record ${status==="recording"?"active":""}`} onClick={status==="recording"?stop:start} disabled={status==="processing"||status==="speaking"}><span className="mic">●</span>{status==="recording"?"말하기 끝내기":"말하기 시작"}</button>
-  //     <div className="quick"><button onClick={()=>quick("오늘 혈압이 145에 90인데 어떻게 관리하면 좋을까요?")}>혈압 관리</button><button onClick={()=>quick("잠을 잘 못 자고 있습니다. 생활습관을 어떻게 바꾸면 좋을까요?")}>수면 관리</button><button onClick={newGame}>🎮 게임 할래</button>{gameStarted&&<button onClick={endGame}>게임 종료</button>}</div>
-  //   </section>
-  //   <section className="dashboard"><div className="card"><div className="card-title"><span>01</span> 음성 인식(STT)</div><p>{transcript||"음성 입력을 기다리고 있습니다."}</p></div><div className="card answer-card"><div className="card-title"><span>02</span> {mode==="game"?"카카오 끝말잇기 MCP":"GPT-4o 건강관리 답변"} {mcpUsed&&<em>MCP 연결</em>}</div><p>{answer||(mode==="game"?"“게임 할래”라고 말하면 카카오 PlayMCP의 start_game이 실행됩니다.":"질문을 말씀하시면 건강관리 방법을 안내합니다.")}</p></div></section>
-  //   {mode==="game"&&<section className="game-info"><strong>🧠 인지활동 게임</strong><p>끝말잇기는 어르신이 재미있게 단어를 떠올리고 말하는 놀이 기능입니다.</p><small>MCP: start_game · submit_word · get_hint · give_up · check_word</small></section>}
-  //   {emergency&&<section className="emergency"><div><strong>응급상황이 의심됩니다.</strong><p>AI의 판단만 기다리지 말고 즉시 전문 의료 도움을 요청하세요.</p></div><a className="call119" href="tel:119">119 전화</a></section>}{error&&<div className="error">{error}</div>}
-  //   <footer><span>⚕ 건강 정보는 참고용이며 진단을 대신하지 않습니다.</span><span>SOS119 · GPT-4o + Kakao PlayMCP</span></footer></section></main>;
-  /* 33행 시작 */
+  
   return (
     <main className="page">
       <section className="shell">
