@@ -3,7 +3,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "SOS119 | 음성 건강관리 AI 비서",
-  description: "STT → GPT-4o → TTS 기반 음성 건강관리 AI 비서"
+  description: "STT → GPT-4o → TTS 기반 음성 건강관리 AI 비서",icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

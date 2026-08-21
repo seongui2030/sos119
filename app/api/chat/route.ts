@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { openai, MODEL, HEALTH_SYSTEM_PROMPT } from "../../../lib";
 
-export const maxDuration = 60;
+export const maxDuration = 10;
 export const runtime = "nodejs";
 const MCP_TOOLS = ["start_game", "submit_word", "get_hint", "give_up", "check_word"];
 
