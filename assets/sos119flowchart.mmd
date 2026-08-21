@@ -1,0 +1,125 @@
+flowchart TD
+  A[사용자가 앱 접속] --> B[똑똑 비서 화면 표시]
+  B --> C{사용자 입력 방식}
+
+  C -->|마이크 버튼| D[마이크 권한 요청]
+  D -->|허용| E[음성 녹음]
+  D -->|거부| Z[마이크 권한 오류 표시]
+
+  E --> F[녹음 종료]
+  F --> G[음성 파일 Blob 생성]
+  G --> H[POST /api/transcribe]
+  H --> I[OpenAI STT 음성 인식]
+  I --> J[음성을 텍스트로 변환]
+
+  C -->|빠른 질문 버튼| J
+
+  J --> K{응급 키워드인가?}
+  K -->|예| L[응급 안내 표시]
+  L --> M[즉시 119 또는 의료기관에 연락]
+  K -->|아니오| N{게임 요청인가?}
+
+  N -->|아니오| O[건강 질문으로 처리]
+  O --> P[POST /api/chat]
+  P --> Q[OpenAI Responses API]
+  Q --> R[건강관리 답변 생성]
+
+  N -->|예| S[게임 모드 전환]
+  S --> T[POST /api/chat]
+  T --> U[OpenAI Responses API]
+  U --> V{MCP 도구 선택}
+
+  V -->|게임 시작| W[start_game]
+  V -->|단어 제출| X[submit_word]
+  V -->|힌트 요청| Y[get_hint]
+  V -->|게임 종료| AA[give_up]
+  V -->|단어 확인| AB[check_word]
+
+  W --> AC[원격 MCP 서버]
+  X --> AC
+  Y --> AC
+  AA --> AC
+  AB --> AC
+
+  AC --> AD[게임 결과 반환]
+  AD --> AE[AI가 자연스러운 한국어 답변 생성]
+
+  R --> AF[답변 텍스트]
+  AE --> AF
+
+  AF --> AG[화면에 답변 표시]
+  AG --> AH[POST /api/tts]
+  AH --> AI[OpenAI TTS 음성 합성]
+  AI --> AJ[MP3 음성 반환]
+  AJ --> AK[브라우저에서 음성 재생]
+  AK --> AL[대화 종료 또는 다음 입력 대기]
+
+  AL --> C
+
+  H -->|실패| E1[STT 오류 표시]
+  P -->|실패| E1
+  T -->|실패| E1
+  AH -->|실패| E1
+  E1 --> ALflowchart TD
+  A[사용자가 앱 접속] --> B[똑똑 비서 화면 표시]
+  B --> C{사용자 입력 방식}
+
+  C -->|마이크 버튼| D[마이크 권한 요청]
+  D -->|허용| E[음성 녹음]
+  D -->|거부| Z[마이크 권한 오류 표시]
+
+  E --> F[녹음 종료]
+  F --> G[음성 파일 Blob 생성]
+  G --> H[POST /api/transcribe]
+  H --> I[OpenAI STT 음성 인식]
+  I --> J[음성을 텍스트로 변환]
+
+  C -->|빠른 질문 버튼| J
+
+  J --> K{응급 키워드인가?}
+  K -->|예| L[응급 안내 표시]
+  L --> M[즉시 119 또는 의료기관에 연락]
+  K -->|아니오| N{게임 요청인가?}
+
+  N -->|아니오| O[건강 질문으로 처리]
+  O --> P[POST /api/chat]
+  P --> Q[OpenAI Responses API]
+  Q --> R[건강관리 답변 생성]
+
+  N -->|예| S[게임 모드 전환]
+  S --> T[POST /api/chat]
+  T --> U[OpenAI Responses API]
+  U --> V{MCP 도구 선택}
+
+  V -->|게임 시작| W[start_game]
+  V -->|단어 제출| X[submit_word]
+  V -->|힌트 요청| Y[get_hint]
+  V -->|게임 종료| AA[give_up]
+  V -->|단어 확인| AB[check_word]
+
+  W --> AC[원격 MCP 서버]
+  X --> AC
+  Y --> AC
+  AA --> AC
+  AB --> AC
+
+  AC --> AD[게임 결과 반환]
+  AD --> AE[AI가 자연스러운 한국어 답변 생성]
+
+  R --> AF[답변 텍스트]
+  AE --> AF
+
+  AF --> AG[화면에 답변 표시]
+  AG --> AH[POST /api/tts]
+  AH --> AI[OpenAI TTS 음성 합성]
+  AI --> AJ[MP3 음성 반환]
+  AJ --> AK[브라우저에서 음성 재생]
+  AK --> AL[대화 종료 또는 다음 입력 대기]
+
+  AL --> C
+
+  H -->|실패| E1[STT 오류 표시]
+  P -->|실패| E1
+  T -->|실패| E1
+  AH -->|실패| E1
+  E1 --> AL
