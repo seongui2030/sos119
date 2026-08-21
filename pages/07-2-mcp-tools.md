@@ -1,4 +1,3 @@
-# MCP 도구와 API 연결
 
 `app/api/chat/route.ts`에는 허용할 도구 이름이 배열로 적혀 있습니다.
 

@@ -1,4 +1,3 @@
-# 프로덕션 빌드
 
 ```bash
 npm run build

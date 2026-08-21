@@ -1,4 +1,3 @@
-# API 키와 개인정보 보호
 
 API 키는 비용이 발생할 수 있는 비밀 정보입니다. `OPENAI_API_KEY`를 `page.tsx`에 넣거나 README에 기록하지 않습니다.
 

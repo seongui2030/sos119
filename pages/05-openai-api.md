@@ -1,4 +1,3 @@
-# OpenAI API 연결
 
 OpenAI API는 우리 서버가 인공지능 기능을 사용하도록 해 주는 웹 API입니다. 프로젝트는 `lib.ts`에서 OpenAI 클라이언트를 한 번 만들고 여러 API 라우트에서 가져다 씁니다.
 

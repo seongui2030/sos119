@@ -1,4 +1,3 @@
-# TTS API 구현
 
 `app/api/tts/route.ts`는 JSON으로 받은 텍스트를 OpenAI 음성 API에 전달합니다.
 

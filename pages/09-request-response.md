@@ -1,4 +1,3 @@
-# 요청과 응답 관찰하기
 
 브라우저 Network 탭에서 `/api/chat`을 선택하고 Request와 Response를 비교해 봅니다.
 

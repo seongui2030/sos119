@@ -1,4 +1,3 @@
-# 채팅 API
 
 `POST /api/chat`은 질문이나 게임 요청을 OpenAI Responses API에 전달합니다.
 

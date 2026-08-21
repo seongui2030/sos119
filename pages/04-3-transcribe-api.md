@@ -1,4 +1,3 @@
-# STT API: 음성을 글자로 바꾸기
 
 `app/api/transcribe/route.ts`는 음성 파일을 받아 OpenAI 음성 인식 API에 전달합니다.
 
