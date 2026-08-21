@@ -80,7 +80,7 @@ sos119/
 ### 전체 데이터 흐름
 
 ```mermaid
-flowchart LR
+
     A[사용자] -->|말하기| B[브라우저 page.tsx]
     B -->|음성 파일| C[/api/transcribe]
     C -->|글자| B
