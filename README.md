@@ -96,9 +96,8 @@ flowchart TD
     J --> K[POST /api/tts]
     K --> L[OpenAI TTS]
     L --> M[MP3 음성 재생]
-```
 
-
+flowchart TD
     A[사용자] -->|말하기| B[브라우저 page.tsx]
     B -->|음성 파일| C[/api/transcribe]
     C -->|글자| B
