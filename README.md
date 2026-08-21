@@ -81,18 +81,17 @@ sos119/
 
 ```mermaid
 flowchart LR
-		A[사용자] -->|말하기| B[브라우저 page.tsx]
-		B -->|음성 파일| C[/api/transcribe]
-		C -->|글자| B
-		B -->|질문 또는 게임 요청| D[/api/chat]
-		D --> E[OpenAI Responses API]
-		E -.->|게임 도구| F[원격 MCP 서버]
-		E -->|답변 글자| B
-		B -->|답변 글자| G[/api/tts]
-		G -->|MP3 음성| B
-		B --> H[화면 표시 및 재생]
+    A[사용자] -->|말하기| B[브라우저 page.tsx]
+    B -->|음성 파일| C[/api/transcribe]
+    C -->|글자| B
+    B -->|질문 또는 게임 요청| D[/api/chat]
+    D --> E[OpenAI Responses API]
+    E -.->|게임 도구| F[원격 MCP 서버]
+    E -->|답변 글자| B
+    B -->|답변 글자| G[/api/tts]
+    G -->|MP3 음성| B
+    B --> H[화면 표시 및 재생]
 ```
-
 화살표 하나는 보통 HTTP 요청 하나를 의미합니다. 브라우저가 서버에 요청을 보내면 서버가 OpenAI나 MCP에 다시 요청하고, 결과를 브라우저에 돌려줍니다.
 
 ## 3. 웹 브라우저는 어떻게 동작할까
