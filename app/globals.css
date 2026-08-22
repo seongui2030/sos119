@@ -11,7 +11,7 @@ button, a { font: inherit; }
 .hero { text-align: center; padding: 72px 20px 56px; }
 .eyebrow { color: #e53935; font-weight: 800; letter-spacing: 2px; font-size: 11px; }
 .game-label { font-size: clamp(21px, 3.5vw, 36px); letter-spacing: -2px; }
-h1 { margin: 12px 0; font-size: clamp(21px, 3.5vw, 36px); line-height: .98; letter-spacing: -4px; }
+h1 { margin: 12px 0; font-size: clamp(42px, 7vw, 72px); line-height: .98; letter-spacing: -4px; }
 h1 span { color: #3e5968; }
 .hero > p { color: #71808a; font-size: 16px; }
 .orb { width: 190px; height: 190px; margin: 40px auto 20px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle, #fff 0 40%, #dce8ee 41% 70%, #c7d8e0 71% 100%); box-shadow: 0 20px 60px #9db2be55; }
