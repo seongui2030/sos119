@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { openai, MODEL, HEALTH_SYSTEM_PROMPT } from "../../../lib";
 
-export const maxDuration = 10;
+export const maxDuration = 60;
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
