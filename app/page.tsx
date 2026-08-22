@@ -43,7 +43,7 @@ export default function Home(){
         </header>
 
         {/* 34행 시작 */}
-        <section className="eyebrow game-label">
+        <section className="hero">
           <div className={mode === "game" ? "eyebrow game-label" : "eyebrow"}>
             {gameStarted ? "끝말 잇기" : "똑똑 비서"}
           </div>
